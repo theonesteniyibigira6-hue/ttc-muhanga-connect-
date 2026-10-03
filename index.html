@@ -1,0 +1,1919 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  
+  <!-- Primary Meta Tags -->
+  <title>TTC Muhanga Connect | One School. One Community. A Lifetime of Connection.</title>
+  <meta name="title" content="TTC Muhanga Connect | One School. One Community. A Lifetime of Connection.">
+  <meta name="description" content="Authorized digital community for TTC Muhanga in Rwanda. Connecting students, teachers, staff, alumni, and approved partners beyond the classroom.">
+  <meta name="keywords" content="TTC Muhanga, Rwanda, Teacher Training College, Muhanga Connect, Alumni Network, Education Rwanda, School Community">
+  <meta name="author" content="TTC Muhanga Digital Innovation Team">
+  <meta name="theme-color" content="#071421">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ttcmuhanga.edu.rw/">
+  <meta property="og:title" content="TTC Muhanga Connect | One School. One Community. A Lifetime of Connection.">
+  <meta property="og:description" content="Authorized digital community for TTC Muhanga in Rwanda. One School. One Community. A Lifetime of Connection.">
+  <meta property="og:image" content="/assets/images/og-preview.png">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TTC Muhanga Connect">
+  <meta name="twitter:description" content="Authorized digital community for TTC Muhanga in Rwanda. One School. One Community. A Lifetime of Connection.">
+  <meta name="twitter:image" content="/assets/images/og-preview.png">
+
+  <!-- PWA & Mobile Capabilities -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="TTC Connect">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23071421' stroke='%2300A1DE' stroke-width='4'/><path d='M50 15 L80 32 L80 68 L50 85 L20 68 L20 32 Z' fill='none' stroke='%23FAD201' stroke-width='3'/><circle cx='50' cy='50' r='14' fill='%2320603D'/><circle cx='50' cy='50' r='7' fill='%2300A1DE'/></svg>">
+
+  <!-- Google Fonts: Space Grotesk & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Design Tokens -->
+  <link rel="stylesheet" href="/css/tokens.css">
+
+  <style>
+    /* ==========================================================================
+       TTC MUHANGA CONNECT - CORE STYLING & 3D FUTURISTIC DESIGN SYSTEM
+       Color Palette:
+       - Midnight Navy:  #071421
+       - Deep Blue:      #163A5B
+       - Rwanda Blue:    #00A1DE
+       - Rwanda Green:   #20603D
+       - Rwanda Yellow:  #FAD201
+       - Pure White:     #FFFFFF
+       - Soft Gray:      #94A3B8
+       ========================================================================== */
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #071421;
+      color: #F8FAFC;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Accessibility Skip Link */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 1rem;
+      background: #00A1DE;
+      color: #071421;
+      padding: 0.5rem 1.25rem;
+      border-radius: 0 0 8px 8px;
+      font-weight: 700;
+      z-index: 9999;
+      transition: top 0.2s ease;
+      text-decoration: none;
+    }
+    .skip-link:focus {
+      top: 0;
+    }
+
+    /* Typography Utilities */
+    h1, h2, h3, h4, .font-display {
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      letter-spacing: -0.02em;
+    }
+
+    /* Gradient Text */
+    .gradient-text-hero {
+      background: linear-gradient(135deg, #FFFFFF 0%, #00A1DE 50%, #FAD201 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .gradient-text-rwanda {
+      background: linear-gradient(90deg, #00A1DE 0%, #FAD201 50%, #20603D 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Background 3D Canvas & Ambient Glows */
+    .ambient-glow {
+      position: fixed;
+      pointer-events: none;
+      border-radius: 50%;
+      filter: blur(120px);
+      z-index: 0;
+      opacity: 0.35;
+    }
+    .ambient-glow-1 {
+      top: -10%;
+      right: -5%;
+      width: 550px;
+      height: 550px;
+      background: radial-gradient(circle, rgba(0, 161, 222, 0.5) 0%, rgba(7, 20, 33, 0) 70%);
+    }
+    .ambient-glow-2 {
+      top: 35%;
+      left: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(32, 96, 61, 0.45) 0%, rgba(7, 20, 33, 0) 70%);
+    }
+    .ambient-glow-3 {
+      bottom: 5%;
+      right: 10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(250, 210, 1, 0.25) 0%, rgba(7, 20, 33, 0) 70%);
+    }
+
+    /* Futuristic Cyber Grid Pattern */
+    .cyber-grid-overlay {
+      position: fixed;
+      inset: 0;
+      background-image: 
+        linear-gradient(to right, rgba(0, 161, 222, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 161, 222, 0.04) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+      z-index: 1;
+      mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0.2) 90%);
+    }
+
+    /* Glassmorphism Surface Container */
+    .glass-panel {
+      background: rgba(22, 58, 91, 0.28);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(0, 161, 222, 0.2);
+      box-shadow: 0 8px 32px 0 rgba(7, 20, 33, 0.37);
+      border-radius: 16px;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .glass-panel:hover {
+      border-color: rgba(0, 161, 222, 0.45);
+      box-shadow: 0 12px 40px 0 rgba(0, 161, 222, 0.15);
+    }
+
+    /* Sticky Navigation */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(7, 20, 33, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(0, 161, 222, 0.18);
+      transition: all 0.3s ease;
+    }
+
+    .nav-container {
+      max-width: 1380px;
+      margin: 0 auto;
+      padding: 0.85rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      text-decoration: none;
+    }
+
+    .brand-logo-wrap {
+      position: relative;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(22, 58, 91, 0.9), rgba(7, 20, 33, 0.95));
+      border: 1.5px solid rgba(0, 161, 222, 0.4);
+      box-shadow: 0 0 15px rgba(0, 161, 222, 0.25);
+    }
+
+    .brand-info h1 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      letter-spacing: -0.01em;
+      line-height: 1.15;
+    }
+    .brand-info span {
+      font-size: 0.72rem;
+      color: #00A1DE;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .nav-center {
+      display: none;
+      align-items: center;
+      gap: 2rem;
+    }
+    @media (min-width: 900px) {
+      .nav-center {
+        display: flex;
+      }
+    }
+
+    .nav-link {
+      color: #94A3B8;
+      font-size: 0.93rem;
+      font-weight: 500;
+      text-decoration: none;
+      position: relative;
+      padding: 0.5rem 0.25rem;
+      transition: color 0.25s ease;
+    }
+    .nav-link:hover, .nav-link:focus-visible {
+      color: #FFFFFF;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #00A1DE, #FAD201);
+      transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      border-radius: 2px;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.35rem;
+      font-size: 0.88rem;
+      font-weight: 600;
+      border-radius: 10px;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      font-family: inherit;
+    }
+
+    .btn-login {
+      background: rgba(22, 58, 91, 0.4);
+      color: #F8FAFC;
+      border: 1px solid rgba(0, 161, 222, 0.3);
+    }
+    .btn-login:hover {
+      background: rgba(0, 161, 222, 0.15);
+      border-color: #00A1DE;
+      color: #FFFFFF;
+      box-shadow: 0 0 15px rgba(0, 161, 222, 0.2);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #00A1DE 0%, #163A5B 100%);
+      color: #FFFFFF;
+      border: 1px solid rgba(0, 161, 222, 0.6);
+      box-shadow: 0 4px 18px rgba(0, 161, 222, 0.35);
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(0, 161, 222, 0.55);
+      border-color: #FAD201;
+    }
+
+    .btn-secondary {
+      background: rgba(7, 20, 33, 0.7);
+      color: #F8FAFC;
+      border: 1px solid rgba(250, 210, 1, 0.4);
+      box-shadow: 0 4px 14px rgba(7, 20, 33, 0.5);
+    }
+    .btn-secondary:hover {
+      background: rgba(250, 210, 1, 0.12);
+      border-color: #FAD201;
+      transform: translateY(-2px);
+      color: #FFFFFF;
+    }
+
+    /* Three-Dot Menu Trigger */
+    .menu-trigger-btn {
+      width: 42px;
+      height: 42px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      background: rgba(22, 58, 91, 0.4);
+      border: 1px solid rgba(0, 161, 222, 0.3);
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      color: #FFFFFF;
+    }
+    .menu-trigger-btn:hover, .menu-trigger-btn:focus-visible {
+      background: rgba(0, 161, 222, 0.2);
+      border-color: #00A1DE;
+      box-shadow: 0 0 12px rgba(0, 161, 222, 0.35);
+    }
+    .menu-trigger-dot {
+      width: 4.5px;
+      height: 4.5px;
+      background-color: #00A1DE;
+      border-radius: 50%;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+    .menu-trigger-btn:hover .menu-trigger-dot {
+      background-color: #FAD201;
+      transform: scale(1.15);
+    }
+
+    /* ==========================================================================
+       THREE-DOT SIDE MENU DRAWER (SLIDE-OUT NAVIGATION)
+       ========================================================================== */
+    .drawer-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(3, 10, 18, 0.75);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .drawer-backdrop.is-active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .nav-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100%;
+      max-width: 380px;
+      height: 100%;
+      background: #091A2B;
+      border-left: 1px solid rgba(0, 161, 222, 0.25);
+      box-shadow: -10px 0 40px rgba(0, 0, 0, 0.8);
+      z-index: 1001;
+      transform: translateX(100%);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+    }
+    .nav-drawer.is-open {
+      transform: translateX(0);
+    }
+
+    .drawer-header {
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(0, 161, 222, 0.15);
+      background: rgba(7, 20, 33, 0.6);
+    }
+
+    .drawer-close-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: rgba(22, 58, 91, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #94A3B8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .drawer-close-btn:hover {
+      color: #FFFFFF;
+      background: rgba(0, 161, 222, 0.2);
+      border-color: #00A1DE;
+    }
+
+    .drawer-body {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.85rem;
+      flex: 1;
+    }
+
+    .drawer-section-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #00A1DE;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .drawer-section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(0, 161, 222, 0.15);
+    }
+
+    .drawer-nav-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .drawer-nav-item a {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      padding: 0.65rem 0.85rem;
+      border-radius: 10px;
+      color: #CBD5E1;
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      background: transparent;
+    }
+    .drawer-nav-item a:hover {
+      background: rgba(22, 58, 91, 0.45);
+      color: #FFFFFF;
+      transform: translateX(4px);
+    }
+    .drawer-nav-item a svg {
+      width: 18px;
+      height: 18px;
+      color: #00A1DE;
+      transition: color 0.2s ease;
+      flex-shrink: 0;
+    }
+    .drawer-nav-item a:hover svg {
+      color: #FAD201;
+    }
+
+    /* Admin Locked Badge */
+    .admin-locked-badge {
+      margin-left: auto;
+      font-size: 0.65rem;
+      font-weight: 700;
+      background: rgba(32, 96, 61, 0.3);
+      color: #4ADE80;
+      border: 1px solid rgba(32, 96, 61, 0.6);
+      padding: 0.15rem 0.45rem;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .drawer-footer-note {
+      margin-top: auto;
+      padding: 1rem;
+      background: rgba(7, 20, 33, 0.5);
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      font-size: 0.76rem;
+      color: #64748B;
+      line-height: 1.4;
+    }
+
+    /* ==========================================================================
+       HERO SECTION WITH 3D NETWORK SPHERE
+       ========================================================================== */
+    .hero-section {
+      position: relative;
+      z-index: 2;
+      padding: 4rem 1.5rem 5rem 1.5rem;
+      max-width: 1380px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+    @media (min-width: 1024px) {
+      .hero-section {
+        grid-template-columns: 1.15fr 0.85fr;
+        padding: 5.5rem 2rem 6.5rem 2rem;
+      }
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      background: rgba(22, 58, 91, 0.45);
+      border: 1px solid rgba(0, 161, 222, 0.35);
+      padding: 0.4rem 1rem;
+      border-radius: 30px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #F8FAFC;
+      width: fit-content;
+      backdrop-filter: blur(10px);
+    }
+    .hero-tag-pulse {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #FAD201;
+      box-shadow: 0 0 10px #FAD201;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.4); opacity: 0.6; }
+    }
+
+    .hero-title {
+      font-size: clamp(2.4rem, 5.5vw, 4.4rem);
+      font-weight: 800;
+      line-height: 1.05;
+      text-transform: uppercase;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1rem, 2vw, 1.22rem);
+      color: #94A3B8;
+      max-width: 620px;
+      line-height: 1.65;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    /* Hero Live Stats Bar */
+    .hero-stats-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(0, 161, 222, 0.15);
+    }
+
+    .stat-item h3 {
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    .stat-item p {
+      font-size: 0.78rem;
+      color: #94A3B8;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* 3D Visual Container */
+    .hero-visual-container {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 380px;
+    }
+    @media (min-width: 1024px) {
+      .hero-visual-container {
+        min-height: 480px;
+      }
+    }
+
+    #futuristic-globe-canvas {
+      width: 100%;
+      height: 100%;
+      max-width: 520px;
+      max-height: 520px;
+      aspect-ratio: 1 / 1;
+      display: block;
+      filter: drop-shadow(0 0 35px rgba(0, 161, 222, 0.3));
+    }
+
+    /* Floating Futuristic UI Badges around 3D sphere */
+    .floating-card-badge {
+      position: absolute;
+      background: rgba(7, 20, 33, 0.85);
+      border: 1px solid rgba(0, 161, 222, 0.35);
+      backdrop-filter: blur(12px);
+      padding: 0.65rem 1rem;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      animation: float-slow 4s ease-in-out infinite alternate;
+      z-index: 5;
+    }
+    .badge-top-right {
+      top: 10%;
+      right: 5%;
+      border-color: rgba(250, 210, 1, 0.4);
+    }
+    .badge-bottom-left {
+      bottom: 12%;
+      left: 2%;
+      animation-delay: -2s;
+      border-color: rgba(32, 96, 61, 0.5);
+    }
+    @keyframes float-slow {
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(-12px); }
+    }
+
+    /* ==========================================================================
+       SECTION CONTAINER GENERAL
+       ========================================================================== */
+    .content-section {
+      position: relative;
+      z-index: 2;
+      padding: 5rem 1.5rem;
+      max-width: 1380px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 3.5rem auto;
+    }
+
+    .section-tag {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #00A1DE;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+      display: inline-block;
+    }
+
+    .section-title {
+      font-size: clamp(1.85rem, 3.5vw, 2.75rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    .section-desc {
+      color: #94A3B8;
+      font-size: 1.05rem;
+    }
+
+    /* ==========================================================================
+       FEATURE SHOWCASE (12 CARDS)
+       ========================================================================== */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .feature-card {
+      padding: 2rem 1.75rem;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      border-radius: 16px;
+      background: linear-gradient(145deg, rgba(22, 58, 91, 0.35) 0%, rgba(7, 20, 33, 0.6) 100%);
+      border: 1px solid rgba(0, 161, 222, 0.18);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, #00A1DE, transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(0, 161, 222, 0.5);
+      box-shadow: 0 16px 36px rgba(0, 161, 222, 0.18);
+    }
+    .feature-card:hover::before {
+      opacity: 1;
+    }
+
+    .feature-icon-box {
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      background: rgba(0, 161, 222, 0.12);
+      border: 1px solid rgba(0, 161, 222, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #00A1DE;
+      transition: all 0.3s ease;
+    }
+    .feature-card:hover .feature-icon-box {
+      background: rgba(0, 161, 222, 0.25);
+      color: #FAD201;
+      border-color: #FAD201;
+      transform: scale(1.08);
+    }
+
+    .feature-card h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #FFFFFF;
+    }
+
+    .feature-card p {
+      color: #94A3B8;
+      font-size: 0.92rem;
+      line-height: 1.55;
+    }
+
+    /* ==========================================================================
+       ALUMNI CONNECTION SECTION
+       ========================================================================== */
+    .alumni-banner {
+      background: radial-gradient(ellipse at 80% 50%, rgba(32, 96, 61, 0.25) 0%, rgba(7, 20, 33, 0.85) 70%),
+                  linear-gradient(135deg, rgba(22, 58, 91, 0.5) 0%, rgba(7, 20, 33, 0.95) 100%);
+      border: 1px solid rgba(32, 96, 61, 0.4);
+      border-radius: 24px;
+      padding: 3.5rem 2rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    @media (min-width: 1024px) {
+      .alumni-banner {
+        grid-template-columns: 1.2fr 0.8fr;
+        padding: 4.5rem 3.5rem;
+      }
+    }
+
+    .alumni-points-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.75rem;
+    }
+
+    .alumni-point-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+    }
+    .alumni-point-item svg {
+      width: 20px;
+      height: 20px;
+      color: #FAD201;
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+    .alumni-point-item span {
+      font-size: 0.93rem;
+      color: #CBD5E1;
+    }
+
+    /* Alumni Network Visual Card */
+    .alumni-visual-card {
+      background: rgba(7, 20, 33, 0.7);
+      border: 1px solid rgba(250, 210, 1, 0.25);
+      border-radius: 18px;
+      padding: 2rem;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    /* ==========================================================================
+       OFFICIAL ANNOUNCEMENTS PREVIEW (FIRESTORE READY)
+       ========================================================================== */
+    .announcements-wrapper {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .announcement-card {
+      background: rgba(22, 58, 91, 0.3);
+      border: 1px solid rgba(0, 161, 222, 0.2);
+      border-radius: 16px;
+      padding: 1.85rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    .announcement-card:hover {
+      border-color: rgba(0, 161, 222, 0.45);
+      transform: translateY(-4px);
+    }
+
+    .announcement-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+    }
+
+    .announcement-category {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
+      background: rgba(0, 161, 222, 0.15);
+      color: #00A1DE;
+      border: 1px solid rgba(0, 161, 222, 0.3);
+    }
+
+    .verified-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: #4ADE80;
+    }
+
+    .announcement-date {
+      font-size: 0.8rem;
+      color: #64748B;
+    }
+
+    .announcement-card h4 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #FFFFFF;
+      line-height: 1.35;
+    }
+
+    .announcement-card p {
+      color: #94A3B8;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .announcement-footer {
+      margin-top: auto;
+      padding-top: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .announcement-link {
+      color: #00A1DE;
+      font-size: 0.86rem;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: gap 0.2s ease;
+    }
+    .announcement-link:hover {
+      color: #FAD201;
+      gap: 0.55rem;
+    }
+
+    /* Illustrative note tag */
+    .illustrative-pill {
+      font-size: 0.68rem;
+      background: rgba(250, 210, 1, 0.1);
+      color: #FAD201;
+      border: 1px solid rgba(250, 210, 1, 0.25);
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+    }
+
+    /* ==========================================================================
+       JOIN / CALL TO ACTION HERO BANNER
+       ========================================================================== */
+    .cta-banner {
+      background: linear-gradient(135deg, rgba(22, 58, 91, 0.7) 0%, rgba(7, 20, 33, 0.9) 100%);
+      border: 1.5px solid rgba(0, 161, 222, 0.35);
+      border-radius: 24px;
+      padding: 4rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    }
+    .cta-banner-content {
+      position: relative;
+      z-index: 2;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    /* ==========================================================================
+       FOOTER & RWANDA COLORS ACCENT
+       ========================================================================== */
+    .site-footer {
+      background: #050E17;
+      border-top: 1px solid rgba(0, 161, 222, 0.15);
+      padding: 4rem 1.5rem 2rem 1.5rem;
+      position: relative;
+      z-index: 10;
+    }
+
+    .rwanda-flag-stripe {
+      height: 4px;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: linear-gradient(to right, #00A1DE 0%, #00A1DE 50%, #FAD201 50%, #FAD201 75%, #20603D 75%, #20603D 100%);
+    }
+
+    .footer-grid {
+      max-width: 1380px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    @media (min-width: 768px) {
+      .footer-grid {
+        grid-template-columns: 1.5fr repeat(3, 1fr);
+      }
+    }
+
+    .footer-brand h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 0.5rem;
+    }
+    .footer-brand p {
+      color: #94A3B8;
+      font-size: 0.88rem;
+      line-height: 1.6;
+      max-width: 320px;
+    }
+
+    .footer-nav-col h3 {
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #00A1DE;
+      margin-bottom: 1.1rem;
+    }
+    .footer-nav-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+    .footer-nav-list a {
+      color: #94A3B8;
+      text-decoration: none;
+      font-size: 0.88rem;
+      transition: color 0.2s ease;
+    }
+    .footer-nav-list a:hover {
+      color: #FFFFFF;
+    }
+
+    .footer-bottom {
+      max-width: 1380px;
+      margin: 3rem auto 0 auto;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.82rem;
+      color: #64748B;
+    }
+
+    /* Futuristic HUD Toast Notification for Planned Integration Pages */
+    .tech-toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: rgba(7, 20, 33, 0.95);
+      border: 1px solid #00A1DE;
+      box-shadow: 0 10px 30px rgba(0, 161, 222, 0.35);
+      backdrop-filter: blur(12px);
+      padding: 0.85rem 1.25rem;
+      border-radius: 12px;
+      color: #FFFFFF;
+      font-size: 0.88rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      transform: translateY(120%);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 2000;
+      max-width: 90vw;
+    }
+    .tech-toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* Focus States for Accessibility */
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid #00A1DE;
+      outline-offset: 3px;
+    }
+
+    /* Motion Preference */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .floating-card-badge {
+        animation: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Screen Reader Accessible Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Ambient Dynamic 3D Lights -->
+  <div class="ambient-glow ambient-glow-1" aria-hidden="true"></div>
+  <div class="ambient-glow ambient-glow-2" aria-hidden="true"></div>
+  <div class="ambient-glow ambient-glow-3" aria-hidden="true"></div>
+  <div class="cyber-grid-overlay" aria-hidden="true"></div>
+
+  <!-- ==========================================================================
+       STICKY HEADER & NAVIGATION
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="nav-container">
+      
+      <!-- Brand Logo & Identity -->
+      <a href="/index.html" class="brand-group" aria-label="TTC Muhanga Connect Home">
+        <div class="brand-logo-wrap">
+          <!-- Futuristic TTC Muhanga Digital Emblem SVG -->
+          <svg viewBox="0 0 40 40" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <polygon points="20,2 38,12 38,28 20,38 2,28 2,12" stroke="#00A1DE" stroke-width="2" fill="rgba(0,161,222,0.15)"/>
+            <path d="M20 7L33 15L33 27L20 34L7 27L7 15Z" stroke="#FAD201" stroke-width="1.5" fill="none"/>
+            <!-- Academic Open Book & Network Nodes -->
+            <path d="M13 22C16 20 20 21 20 25C20 21 24 20 27 22" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="20" cy="14" r="3" fill="#20603D" stroke="#FFFFFF" stroke-width="1.5"/>
+            <circle cx="20" cy="25" r="1.5" fill="#FAD201"/>
+          </svg>
+        </div>
+        <div class="brand-info">
+          <h1>TTC MUHANGA CONNECT</h1>
+          <span>One School. One Community.</span>
+        </div>
+      </a>
+
+      <!-- Desktop Center Navigation -->
+      <nav class="nav-center" aria-label="Main Navigation">
+        <a href="#hero" class="nav-link">Home</a>
+        <a href="#features" class="nav-link">Explore</a>
+        <a href="#alumni" class="nav-link">Alumni</a>
+        <a href="#community-stream" class="nav-link">Community</a>
+        <a href="#announcements" class="nav-link">Announcements</a>
+      </nav>
+
+      <!-- Right Actions: Login, Join & Three-Dot Drawer Trigger -->
+      <div class="nav-actions">
+        <a href="pages/login.html" class="btn btn-login" data-planned-page="pages/login.html">
+          Login
+        </a>
+        <a href="pages/register.html" class="btn btn-primary" data-planned-page="pages/register.html">
+          <span>Join Community</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+
+        <!-- Three-Dot Menu Button -->
+        <button id="three-dot-menu-btn" class="menu-trigger-btn" aria-label="Open comprehensive community navigation menu" aria-expanded="false" aria-controls="nav-drawer">
+          <span class="menu-trigger-dot"></span>
+          <span class="menu-trigger-dot"></span>
+          <span class="menu-trigger-dot"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       THREE-DOT SIDE MENU DRAWER (SLIDE-OUT NAVIGATION)
+       ========================================================================== -->
+  <div id="drawer-backdrop" class="drawer-backdrop" aria-hidden="true"></div>
+
+  <aside id="nav-drawer" class="nav-drawer" aria-label="Expanded Community Drawer" aria-hidden="true">
+    <div class="drawer-header">
+      <div class="brand-group">
+        <div class="brand-logo-wrap" style="width: 36px; height: 36px;">
+          <svg viewBox="0 0 40 40" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="20,2 38,12 38,28 20,38 2,28 2,12" stroke="#00A1DE" stroke-width="2" fill="rgba(0,161,222,0.15)"/>
+            <circle cx="20" cy="20" r="5" fill="#FAD201"/>
+          </svg>
+        </div>
+        <div class="brand-info">
+          <h2 style="font-size: 1rem; color: #fff;">Navigation Hub</h2>
+          <span style="font-size: 0.68rem; color: #00A1DE;">TTC Muhanga Ecosystem</span>
+        </div>
+      </div>
+      <button id="drawer-close-btn" class="drawer-close-btn" aria-label="Close navigation menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <div class="drawer-body">
+      
+      <!-- COMMUNITY SECTION -->
+      <section aria-labelledby="drawer-community-heading">
+        <h3 id="drawer-community-heading" class="drawer-section-title">Community</h3>
+        <ul class="drawer-nav-list">
+          <li class="drawer-nav-item">
+            <a href="/index.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="drawer-nav-item">
+            <a href="pages/feed.html" data-planned-page="pages/feed.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              <span>Community Feed</span>
+            </a>
+          </li>
+          <li class="drawer-nav-item">
+            <a href="pages/explore.html" data-planned-page="pages/explore.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+              <span>Explore</span>
+            </a>
+          </li>
+          <li class="drawer-nav-item">
+            <a href="pages/groups.html" data-planned-page="pages/groups.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              <span>Groups & Clubs</span>
+            </a>
+          </li>
+          <li class="drawer-nav-item">
+            <a href="pages/messages.html" data-planned-page="pages/messages.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              <span>Messages</span>
+            </a>
+          </li>
+          <li class="drawer-nav-item">
+            <a href="pages/notifications.html" data-planned-page="pages/notifications.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+              <span>Notifications</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- SCHOOL LIFE SECTION -->
+      <section aria-labelledby="drawer-school-heading">
+        <h3 id="drawer-school-heading" class="drawer-section-title">School Life</h3>
+        <ul class="drawer-nav-list">
+          <li class="drawer-nav-item">
+            <a href="pages/announcements.html" data-planned-page="pages/announcements.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span>Announcements</span>
+            </a>
+          </li>
+          <li class="drawer-nav-item">
+            <a href="pages/events.html" data-planned-page="pages/events.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              <span>Events & Calendar</span>
+            </a>
+          </li>
+          <li class="drawer-nav-item">
+            <a href="pages/academic.html" data-planned-page="pages/academic.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              <span>Academic Hub</span>
+            </a>
+          </li>
+          <li class="drawer-nav-item">
+            <a href="pages/alumni.html" data-planned-page="pages/alumni.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+              <span>Alumni Network</span>
+            </a>
+          </li>
+          <li class="drawer-nav-item">
+            <a href="pages/opportunities.html" data-planned-page="pages/opportunities.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+              <span>Opportunities & Careers</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- ACCOUNT SECTION -->
+      <section aria-labelledby="drawer-account-heading">
+        <h3 id="drawer-account-heading" class="drawer-section-title">Account</h3>
+        <ul class="drawer-nav-list">
+          <li class="drawer-nav-item">
+            <a href="pages/profile.html" data-planned-page="pages/profile.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <span>My Profile</span>
+            </a>
+          </li>
+          <li class="drawer-nav-item">
+            <a href="pages/settings.html" data-planned-page="pages/settings.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+              <span>Settings & Privacy</span>
+            </a>
+          </li>
+          <li class="drawer-nav-item">
+            <a href="pages/help.html" data-planned-page="pages/help.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              <span>Help & Safety</span>
+            </a>
+          </li>
+          <li class="drawer-nav-item">
+            <a href="pages/login.html" data-planned-page="pages/login.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+              <span>Login</span>
+            </a>
+          </li>
+          <li class="drawer-nav-item">
+            <a href="pages/register.html" data-planned-page="pages/register.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+              <span>Register</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- ADMINISTRATION SECTION (SECURITY HARDENED INTEGRATION POINT) -->
+      <section aria-labelledby="drawer-admin-heading">
+        <h3 id="drawer-admin-heading" class="drawer-section-title">Administration</h3>
+        <ul class="drawer-nav-list">
+          <li class="drawer-nav-item">
+            <a href="pages/admin.html" data-planned-page="pages/admin.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+              <span>Admin Dashboard</span>
+              <span class="admin-locked-badge">Auth Key</span>
+            </a>
+          </li>
+          <li class="drawer-nav-item">
+            <a href="pages/moderation.html" data-planned-page="pages/moderation.html">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <span>Moderation Center</span>
+              <span class="admin-locked-badge">Role</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Institutional Security Disclosure Note -->
+      <div class="drawer-footer-note">
+        <strong>Security Notice:</strong> Administrative and moderation portals require verified Firebase Custom Claims authorized by school officials. Client-side visibility does not confer access privileges.
+      </div>
+
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       MAIN CONTENT CONTAINER
+       ========================================================================== -->
+  <main id="main-content">
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero-section" aria-label="Hero Introduction">
+      
+      <div class="hero-content">
+        <!-- Live Tag Badge -->
+        <div class="hero-tag">
+          <span class="hero-tag-pulse"></span>
+          <span>TTC Muhanga Digital Frontier • Rwanda</span>
+        </div>
+
+        <!-- Main Title -->
+        <h1 class="hero-title">
+          ONE SCHOOL.<br>
+          <span class="gradient-text-hero">INFINITE CONNECTIONS.</span>
+        </h1>
+
+        <!-- Supporting Text -->
+        <p class="hero-subtitle">
+          Where students, teachers, staff, alumni, and approved partners connect beyond classrooms. Share ideas, learn together, celebrate achievements, and keep the TTC Muhanga spirit alive for a lifetime.
+        </p>
+
+        <!-- CTA Action Buttons -->
+        <div class="hero-cta-group">
+          <a href="pages/register.html" class="btn btn-primary" data-planned-page="pages/register.html">
+            <span>BECOME A MEMBER</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <a href="#features" class="btn btn-secondary">
+            <span>DISCOVER THE COMMUNITY</span>
+          </a>
+        </div>
+
+        <!-- Real-time Connected Stats -->
+        <div class="hero-stats-row">
+          <div class="stat-item">
+            <h3>5,000+</h3>
+            <p>Connected Members</p>
+          </div>
+          <div class="stat-item">
+            <h3 style="color: #00A1DE;">100%</h3>
+            <p>Verified Identity</p>
+          </div>
+          <div class="stat-item">
+            <h3 style="color: #FAD201;">12+</h3>
+            <p>Academic Streams</p>
+          </div>
+          <div class="stat-item">
+            <h3 style="color: #4ADE80;">Lifetime</h3>
+            <p>Alumni Network</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 3D Interactive Network Visual -->
+      <div class="hero-visual-container" aria-label="Interactive 3D Network Sphere of TTC Muhanga">
+        <canvas id="futuristic-globe-canvas" width="500" height="500"></canvas>
+
+        <!-- Floating UI Card: Rwanda Hub -->
+        <div class="floating-card-badge badge-top-right">
+          <div style="width: 10px; height: 10px; border-radius: 50%; background: #FAD201; box-shadow: 0 0 8px #FAD201;"></div>
+          <div>
+            <div style="font-size: 0.72rem; color: #94A3B8; text-transform: uppercase;">Node Location</div>
+            <div style="font-size: 0.86rem; font-weight: 700; color: #FFFFFF;">Muhanga District, Rwanda</div>
+          </div>
+        </div>
+
+        <!-- Floating UI Card: Network Activity -->
+        <div class="floating-card-badge badge-bottom-left">
+          <div style="width: 10px; height: 10px; border-radius: 50%; background: #00A1DE; box-shadow: 0 0 8px #00A1DE;"></div>
+          <div>
+            <div style="font-size: 0.72rem; color: #94A3B8; text-transform: uppercase;">Ecosystem State</div>
+            <div style="font-size: 0.86rem; font-weight: 700; color: #FFFFFF;">Active Synchronized Mesh</div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==========================================================================
+         FEATURE SHOWCASE (12 INTERACTIVE PRODUCTION CARDS)
+         ========================================================================== -->
+    <section id="features" class="content-section" aria-labelledby="features-heading">
+      <div class="section-header">
+        <span class="section-tag">Empowering Digital Ecosystem</span>
+        <h2 id="features-heading" class="section-title">Built For The Modern TTC Community</h2>
+        <p class="section-desc">
+          Engineered with precision for high-trust communication, academic collaboration, and lifelong professional relationships.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        
+        <!-- 1. Community Feed -->
+        <article class="feature-card">
+          <div class="feature-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 11a9 9 0 0 1 9 9"></path>
+              <path d="M4 4a16 16 0 0 1 16 16"></path>
+              <circle cx="5" cy="19" r="1"></circle>
+            </svg>
+          </div>
+          <h3>1. Community Feed</h3>
+          <p>
+            An intelligent, rich social timeline tailored to TTC Muhanga campus life. Share thoughts, multimedia updates, questions, and institutional triumphs.
+          </p>
+        </article>
+
+        <!-- 2. Private Messaging -->
+        <article class="feature-card">
+          <div class="feature-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+          </div>
+          <h3>2. Private Messaging</h3>
+          <p>
+            End-to-end encrypted direct chats, study group channels, and real-time multimedia discussions between peers, faculty, and research cohorts.
+          </p>
+        </article>
+
+        <!-- 3. Official School Announcements -->
+        <article class="feature-card">
+          <div class="feature-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            </svg>
+          </div>
+          <h3>3. Official Announcements</h3>
+          <p>
+            Verified circulars from school administration, academic boards, and department heads with authenticated seals and high-priority alerts.
+          </p>
+        </article>
+
+        <!-- 4. Groups and Clubs -->
+        <article class="feature-card">
+          <div class="feature-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <h3>4. Groups and Clubs</h3>
+          <p>
+            Dedicated digital spaces for debate clubs, science societies, sports teams, teacher training guilds, and cultural collectives.
+          </p>
+        </article>
+
+        <!-- 5. Lifetime Alumni Network -->
+        <article class="feature-card">
+          <div class="feature-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+          </div>
+          <h3>5. Lifetime Alumni Network</h3>
+          <p>
+            An unbroken bridge between graduating classes. Connect with leaders across education, government, technology, and global academia.
+          </p>
+        </article>
+
+        <!-- 6. Academic Collaboration -->
+        <article class="feature-card">
+          <div class="feature-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+            </svg>
+          </div>
+          <h3>6. Academic Collaboration</h3>
+          <p>
+            Exchange lesson plans, pedagogical methodologies, research papers, syllabus revisions, and teaching practice materials easily.
+          </p>
+        </article>
+
+        <!-- 7. Events and Activities -->
+        <article class="feature-card">
+          <div class="feature-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+          </div>
+          <h3>7. Events and Activities</h3>
+          <p>
+            Interactive campus calendars, graduation symposiums, teacher training workshops, cultural festivals, and alumni homecoming summits.
+          </p>
+        </article>
+
+        <!-- 8. Career Opportunities -->
+        <article class="feature-card">
+          <div class="feature-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+            </svg>
+          </div>
+          <h3>8. Career Opportunities</h3>
+          <p>
+            Curated job boards, teaching vacancies, university scholarships, internships, and educational fellowships across Rwanda and East Africa.
+          </p>
+        </article>
+
+        <!-- 9. School Memories & Archive -->
+        <article class="feature-card">
+          <div class="feature-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <circle cx="8.5" cy="8.5" r="1.5"></circle>
+              <polyline points="21 15 16 10 5 21"></polyline>
+            </svg>
+          </div>
+          <h3>9. School Memories</h3>
+          <p>
+            A high-definition historical vault preserving campus photo galleries, yearbook chronicles, championship victories, and milestone videos.
+          </p>
+        </article>
+
+        <!-- 10. Digital Learning Community -->
+        <article class="feature-card">
+          <div class="feature-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+              <polyline points="2 17 12 22 22 17"></polyline>
+              <polyline points="2 12 12 17 22 12"></polyline>
+            </svg>
+          </div>
+          <h3>10. Digital Learning Community</h3>
+          <p>
+            Integrated virtual micro-workshops, peer tutoring, interactive study halls, and continuous professional development for educators.
+          </p>
+        </article>
+
+        <!-- 11. Real-time Notifications -->
+        <article class="feature-card">
+          <div class="feature-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+          </div>
+          <h3>11. Real-time Notifications</h3>
+          <p>
+            Instant push alerts via Web PWA & Firebase Cloud Messaging for urgent exam updates, campus notices, group mentions, and event reminders.
+          </p>
+        </article>
+
+        <!-- 12. Secure Member Profiles -->
+        <article class="feature-card">
+          <div class="feature-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <h3>12. Secure Member Profiles</h3>
+          <p>
+            Role-verified cryptographic credentials guaranteeing that students, alumni, and certified faculty can trust every interaction on the platform.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         ALUMNI CONNECTION SECTION
+         ========================================================================== -->
+    <section id="alumni" class="content-section" aria-labelledby="alumni-heading">
+      <div class="alumni-banner">
+        
+        <div>
+          <span class="section-tag" style="color: #FAD201;">Lifelong Institutional Bond</span>
+          <h2 id="alumni-heading" class="section-title" style="margin-top: 0.5rem;">
+            "YOUR TTC JOURNEY DOESN'T END AT GRADUATION."
+          </h2>
+          <p class="section-desc" style="color: #CBD5E1;">
+            Whether you graduated last year or decades ago, TTC Muhanga remains your lifelong family. Our futuristic network ensures you are always one click away from mentorship, reunion, and collaborative impact.
+          </p>
+
+          <div class="alumni-points-grid">
+            <div class="alumni-point-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Reconnect</strong> with former classmates across Rwanda & the diaspora</span>
+            </div>
+            <div class="alumni-point-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Mentor</strong> aspiring teachers and current TTC students</span>
+            </div>
+            <div class="alumni-point-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Share</strong> professional vacancies, tenders & scholarships</span>
+            </div>
+            <div class="alumni-point-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Participate</strong> in grand reunions & alumni assemblies</span>
+            </div>
+            <div class="alumni-point-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Support</strong> developmental school programs & scholarships</span>
+            </div>
+            <div class="alumni-point-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Preserve</strong> precious heritage, stories & school traditions</span>
+            </div>
+          </div>
+
+          <div style="margin-top: 2rem;">
+            <a href="pages/alumni.html" class="btn btn-primary" data-planned-page="pages/alumni.html">
+              <span>Join The Alumni Registry</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Alumni Visual Card / Mentorship Node -->
+        <div class="alumni-visual-card">
+          <div style="display: flex; align-items: center; justify-content: space-between;">
+            <span style="font-size: 0.72rem; font-weight: 700; color: #FAD201; text-transform: uppercase;">Alumni Portal Live Mesh</span>
+            <span style="font-size: 0.72rem; background: rgba(32, 96, 61, 0.4); color: #4ADE80; padding: 0.2rem 0.6rem; border-radius: 20px;">Synchronized</span>
+          </div>
+
+          <div style="background: rgba(22, 58, 91, 0.4); padding: 1rem; border-radius: 12px; border: 1px solid rgba(0, 161, 222, 0.2);">
+            <div style="font-size: 0.8rem; color: #94A3B8;">Featured Initiative</div>
+            <div style="font-size: 1rem; font-weight: 700; color: #FFFFFF; margin-top: 0.25rem;">TTC Muhanga STEM & Pedagogy Mentorship 2026</div>
+            <div style="font-size: 0.82rem; color: #CBD5E1; margin-top: 0.5rem; line-height: 1.5;">
+              "Connecting senior education officers and headteachers with newly qualified educators in Southern Province."
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+            <div style="background: rgba(7, 20, 33, 0.6); padding: 0.75rem; border-radius: 10px; border: 1px solid rgba(255,255,255,0.05);">
+              <div style="font-size: 1.3rem; font-weight: 700; color: #00A1DE;">30+</div>
+              <div style="font-size: 0.72rem; color: #94A3B8;">Graduating Cohorts</div>
+            </div>
+            <div style="background: rgba(7, 20, 33, 0.6); padding: 0.75rem; border-radius: 10px; border: 1px solid rgba(255,255,255,0.05);">
+              <div style="font-size: 1.3rem; font-weight: 700; color: #FAD201;">480+</div>
+              <div style="font-size: 0.72rem; color: #94A3B8;">Registered Mentors</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         OFFICIAL SCHOOL ANNOUNCEMENT PREVIEW (FIRESTORE READY)
+         ========================================================================== -->
+    <section id="announcements" class="content-section" aria-labelledby="announcements-heading">
+      <div class="section-header">
+        <span class="section-tag">Institutional Bulletins</span>
+        <h2 id="announcements-heading" class="section-title">Official Announcements Preview</h2>
+        <p class="section-desc">
+          Official dispatches from school administration. Prepared for real-time Firestore database synchronization via Cloud Functions.
+        </p>
+      </div>
+
+      <div class="announcements-wrapper">
+        
+        <!-- Illustrative Announcement 1 -->
+        <article class="announcement-card">
+          <div class="announcement-meta">
+            <span class="announcement-category">Academic Excellence</span>
+            <span class="illustrative-pill">Firestore Ready Preview</span>
+          </div>
+          <h4>National Teacher Training Assessment & Practicum Readiness</h4>
+          <p>
+            Official preparation timetable for final-year teaching practice placements in secondary and primary schools across Muhanga and neighbouring districts.
+          </p>
+          <div class="announcement-footer">
+            <div class="verified-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Verified Admin Circular</span>
+            </div>
+            <a href="pages/announcements.html" class="announcement-link" data-planned-page="pages/announcements.html">
+              <span>Read Full Circular</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Illustrative Announcement 2 -->
+        <article class="announcement-card">
+          <div class="announcement-meta">
+            <span class="announcement-category" style="color: #FAD201; border-color: rgba(250, 210, 1, 0.4); background: rgba(250, 210, 1, 0.1);">Campus Innovation</span>
+            <span class="illustrative-pill">Firestore Ready Preview</span>
+          </div>
+          <h4>Launch of Digital STEM & ICT Laboratories</h4>
+          <p>
+            Refurbishment of the campus high-speed computing center, enabling student teachers to master contemporary digital education tools and e-learning platforms.
+          </p>
+          <div class="announcement-footer">
+            <div class="verified-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Verified Admin Circular</span>
+            </div>
+            <a href="pages/announcements.html" class="announcement-link" data-planned-page="pages/announcements.html">
+              <span>Read Full Circular</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Illustrative Announcement 3 -->
+        <article class="announcement-card">
+          <div class="announcement-meta">
+            <span class="announcement-category" style="color: #4ADE80; border-color: rgba(32, 96, 61, 0.5); background: rgba(32, 96, 61, 0.2);">Alumni Assembly</span>
+            <span class="illustrative-pill">Firestore Ready Preview</span>
+          </div>
+          <h4>Annual TTC Muhanga Alumni Homecoming & Education Summit</h4>
+          <p>
+            Registration is officially open for the upcoming annual assembly bringing together alumni educators, mentors, and partner institutions.
+          </p>
+          <div class="announcement-footer">
+            <div class="verified-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Verified Admin Circular</span>
+            </div>
+            <a href="pages/announcements.html" class="announcement-link" data-planned-page="pages/announcements.html">
+              <span>Read Full Circular</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         JOIN COMMUNITY CALL TO ACTION
+         ========================================================================== -->
+    <section class="content-section" style="padding-top: 2rem;">
+      <div class="cta-banner">
+        <div class="cta-banner-content">
+          <span class="section-tag" style="color: #00A1DE;">Join Your School Ecosystem</span>
+          <h2 class="section-title" style="font-size: clamp(2rem, 4vw, 3rem);">
+            Be Part of TTC Muhanga's Digital Era
+          </h2>
+          <p class="section-desc" style="margin-bottom: 2rem; color: #CBD5E1;">
+            Whether you are on campus today or shaping classrooms across the country, your voice matters in our community.
+          </p>
+          <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;">
+            <a href="pages/register.html" class="btn btn-primary" style="padding: 0.85rem 2rem; font-size: 1rem;" data-planned-page="pages/register.html">
+              <span>Create Your Account</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+            <a href="pages/login.html" class="btn btn-login" style="padding: 0.85rem 2rem; font-size: 1rem;" data-planned-page="pages/login.html">
+              Sign In to Portal
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <!-- Rwanda National Flag Accent Stripe -->
+    <div class="rwanda-flag-stripe" aria-hidden="true"></div>
+
+    <div class="footer-grid">
+      
+      <!-- Brand & Mission Column -->
+      <div class="footer-brand">
+        <div class="brand-group" style="margin-bottom: 1rem;">
+          <div class="brand-logo-wrap" style="width: 36px; height: 36px;">
+            <svg viewBox="0 0 40 40" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="20,2 38,12 38,28 20,38 2,28 2,12" stroke="#00A1DE" stroke-width="2" fill="rgba(0,161,222,0.2)"/>
+              <circle cx="20" cy="20" r="5" fill="#FAD201"/>
+            </svg>
+          </div>
+          <div>
+            <h2>TTC MUHANGA CONNECT</h2>
+          </div>
+        </div>
+        <p style="font-weight: 600; color: #FFFFFF; margin-bottom: 0.5rem;">
+          "One School. One Community. A Lifetime of Connection."
+        </p>
+        <p>
+          The authorized digital hub for Teacher Training College Muhanga, Southern Province, Republic of Rwanda.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-nav-col">
+        <h3>Platform</h3>
+        <ul class="footer-nav-list">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="pages/explore.html" data-planned-page="pages/explore.html">Explore Ecosystem</a></li>
+          <li><a href="pages/feed.html" data-planned-page="pages/feed.html">Community Feed</a></li>
+          <li><a href="pages/groups.html" data-planned-page="pages/groups.html">Groups & Guilds</a></li>
+          <li><a href="pages/events.html" data-planned-page="pages/events.html">Campus Events</a></li>
+        </ul>
+      </div>
+
+      <!-- Institutional Network -->
+      <div class="footer-nav-col">
+        <h3>Community</h3>
+        <ul class="footer-nav-list">
+          <li><a href="pages/alumni.html" data-planned-page="pages/alumni.html">Alumni Network</a></li>
+          <li><a href="pages/academic.html" data-planned-page="pages/academic.html">Academic Hub</a></li>
+          <li><a href="pages/announcements.html" data-planned-page="pages/announcements.html">Official Circulars</a></li>
+          <li><a href="pages/opportunities.html" data-planned-page="pages/opportunities.html">Career & Fellowships</a></li>
+          <li><a href="pages/onboarding.html" data-planned-page="pages/onboarding.html">Student Onboarding</a></li>
+        </ul>
+      </div>
+
+      <!-- Trust & Security -->
+      <div class="footer-nav-col">
+        <h3>Trust & Governance</h3>
+        <ul class="footer-nav-list">
+          <li><a href="pages/help.html" data-planned-page="pages/help.html">Help & Safety</a></li>
+          <li><a href="pages/settings.html" data-planned-page="pages/settings.html">Privacy Policy</a></li>
+          <li><a href="pages/help.html" data-planned-page="pages/help.html">Community Guidelines</a></li>
+          <li><a href="pages/help.html" data-planned-page="pages/help.html">Contact Administration</a></li>
+          <li><a href="pages/moderation.html" data-planned-page="pages/moderation.html">Verification Standards</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom Copyright & Architecture Notice -->
+    <div class="footer-bottom">
+      <div>
+        &copy; <span id="current-year">2026</span> TTC Muhanga Connect. All rights reserved. Republic of Rwanda.
+      </div>
+      <div>
+        Designed for High-Trust Educational Community & Firebase Cloud Ecosystem
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       FUTURISTIC HUD NOTIFICATION TOAST
+       Used for graceful user feedback on planned integration routes
+       ========================================================================== -->
+  <div id="tech-toast" class="tech-toast" role="status" aria-live="polite">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00A1DE" stroke-width="2">
+      <circle cx="12" cy="12" r="10"></circle>
+      <line x1="12" y1="16" x2="12" y2="12"></line>
+      <line x1="12" y1="8" x2="12.01" y2="8"></line>
+    </svg>
+    <span id="tech-toast-msg">Connecting to TTC Muhanga secure service...</span>
+  </div>
+
+  <!-- ==========================================================================
+       CYBERSECURITY & SOURCE INTEGRITY NOTICE
+       
+       Production Security Measures:
+       - No Firebase API private secrets, service account credentials, or privileged
+         tokens are included in index.html or client-side assets.
+       - Client-side code is viewable by nature of the web. Real defense-in-depth
+         is enforced server-side through Firebase Security Rules (firestore.rules,
+         storage.rules) and cryptographically signed JWT Custom Claims.
+       - Disabling browser devtools, right-click, or key shortcuts provides no real
+         security and breaks user accessibility and usability.
+       ========================================================================== -->
+
+  <!-- Core JavaScript Module -->
+  <script type="module" src="/js/app.js"></script>
+
+</body>
+</html>
